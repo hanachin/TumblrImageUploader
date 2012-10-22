@@ -1,0 +1,281 @@
+.photo_area {
+	color: white;
+	background: rgba(0, 0, 0, 0.2);
+	height: 100%;
+}
+
+$set_prefix: -webkit-, -moz-, '';
+
+$base03 : #002b36;
+$base02 : #073642;
+$base01 : #586e75;
+$base00 : #657b83;
+$base0  : #839496;
+$base1  : #93a1a1;
+$base2  : #eee8d5;
+$base3  : #fdf6e3;
+$yellow : #b58900;
+$orange : #cb4b16;
+$red    : #dc322f;
+$magenta: #d33682;
+$violet : #6c71c4;
+$blue   : #268bd2;
+$cyan   : #2aa198;
+$green  : #859900;
+
+html {
+	background: $base03;
+	color: $base0;
+	body {
+		height: 100%;
+	}
+}
+
+#message {
+	text-align: center;
+	width: 100%;
+	padding-top: 3em;
+}
+
+header {
+	$icon_size: 24px;
+	$height: $icon_size + 10;
+
+	position: relative;
+	width: 100%;
+	height: $height;
+	z-index: 10;
+
+	color: $base1;
+	background: $base02;
+	box-shadow: 0px 1px 2px $base01;
+	text-align: center;
+
+	h1 {
+		color: $blue;
+		line-height: $height;
+		font-size: 32px;
+		font-family: 'Futura', sans-self;
+	}
+
+	.signout {
+		position: absolute;
+		top: 0px;
+		right: 2em;
+		height: $height;
+		line-height: $height;
+		color: $cyan;
+	}
+
+	#blog-selector {
+		position: absolute;
+		top: 0px;
+		height: $height;
+		padding: $height 20px 0px 0px;
+
+		text-align: left;
+
+		.blog {
+			width: 15em;
+			height: $icon_size;
+			padding: ($height - $icon_size) / 2;
+
+			background: $base02;
+			box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
+
+			.icon {
+				height: $icon_size;
+				width: $icon_size;
+
+				box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+				border-radius: 5px;
+			}
+
+			.title {
+				position: absolute;
+				right: 0px;
+				left: $icon_size + 5;
+				padding: 0px 1em;
+			}
+
+			&.primary {
+				position: absolute;
+				top: 0px;
+
+				box-shadow: 0px 0px 0px;
+				.title {
+					border-right: 1px $base01 solid;
+				}
+			}
+
+			&:hover {
+				height: $icon_size - 1;
+				color: $cyan;
+				background: $base03;
+				border-bottom: 1px $base01 solid;
+			}
+		}
+	}
+}
+
+@-webkit-keyframes popup {
+  0% {
+  	-webkit-transform: scale(1);
+  }
+
+  65% {
+    -webkit-transform: scale(1);
+
+  }
+
+  78% {
+    -webkit-transform: scale(1.05);
+
+  }
+
+  85% {
+  	-webkit-transform: scale(1.0);
+  }
+
+  90% {
+  	-webkit-transform: scale(1.05);
+  }
+
+  98% {
+    -webkit-transform: scale(1);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@-webkit-keyframes refresh {
+	from {
+		-webkit-transform: rotate(0);
+	}
+	to {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+.image {
+	$img_width: 200px;
+	$img_margin: 5px;
+	position: relative;
+	float: left;
+	margin: 20px;
+	width: $img_width + $img_margin * 2 + 2;
+	background: white;
+	box-shadow: 0px 2px 4px black, 0px 1px 15px white;
+	text-align: center;
+	img {
+		margin: $img_margin;
+		width: $img_width;
+		border: solid 1px gray;
+	}
+	// span {
+	// 	position: absolute;
+	// 	top: 0px;
+	// 	left: 0px;
+	// 	width: 100%;
+	// 	height: 100%;
+	// 	font-size: 44px;
+	// 	background: rgba(0, 0, 0, 0.8);
+	// 	color: $cyan;
+	// 	text-shadow: 0px 0px 10px black;
+	// }
+	.status {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		text-align: center;
+		line-height: 1em;
+		.icon {
+			position: relative;
+			top: 6px;
+			height: 1em;
+			&.icon-refresh {
+				display: block;
+				color: $cyan;
+				-webkit-animation-duration: 0.5s;
+				-webkit-animation-iteration-count: infinite;
+				-webkit-animation-timing-function: ease-in-out;
+				-webkit-transform-origin: center;
+				-webkit-animation-name: refresh;
+			}
+			&.icon-ok {
+				color: $green;
+			}
+			&.icon-repeat {
+				color: $red;
+			}
+		}
+		&.done {
+			background: rgba(0, 0, 0, 0.5);
+		}
+		&.fail {
+			background: rgba(0, 0, 0, 0.5);
+		}
+	}
+}
+
+#content {
+	position: fixed;
+	top: 34px;
+	left: 0px;
+	bottom: 0px;
+	width: 100%;
+	font-size: 5em;
+	color: $base0;
+	text-align: center;
+	z-index: -1;
+
+	&.landing .description a#ta {
+		text-decoration: none;
+		span {
+			color: $cyan;
+		}
+		.signin {
+			font-size: 0.9em;
+		}
+	}
+
+	.description .t {
+		font-size: 2em;
+		display: inline-block;
+		color: $cyan;
+		text-align: center;
+		width: 1em;
+		height: 1em;
+		line-height: 1em;
+		border: 30px $cyan solid;
+		border-radius: 10%;
+	}
+
+	.description {
+		margin-top: 1.5em;
+		width: 100%;
+		text-align: center;
+		display: block;
+		line-height: 0.9em;
+		-webkit-animation-duration: 2.0s;
+		-webkit-animation-timing-function: ease-in-out;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-transform-origin: center;
+		-webkit-transform: scale(1);
+		-webkit-animation-name: popup;
+		z-index: 10;
+		span {
+			position: relative;
+			color: $orange;
+			font-size: 1.5em;
+			z-index: 20;
+		}
+		i {
+			line-height: 0.5em;
+			z-index: 15;
+		}
+	}
+}

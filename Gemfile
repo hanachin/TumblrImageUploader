@@ -1,0 +1,17 @@
+source :rubygems
+
+gem 'sinatra'
+gem 'erubis'
+gem 'coffee-script'
+gem 'sass'
+gem 'omniauth'
+gem 'omniauth-tumblr'
+gem 'tumblife'
+gem 'i18n'
+gem 'active_support'
+gem 'guard'
+gem 'guard-pow'
+gem 'faraday'
+gem 'oauth'
+gem 'thin'
+gem 'rack-canonical-host'

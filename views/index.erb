@@ -1,0 +1,33 @@
+<header>
+	<nav>
+		<h1>Tumblr image uploader</h1>
+		<ul id="blog-selector">
+			<% info.user.blogs.each do |blog| %>
+			<li data-hostname="<%= blog.name %>.tumblr.com" class="blog <%= blog.primary ? 'primary' : "" %>">
+				<img class="icon" src="<%= url("/icon/#{blog.name}.tumblr.com") %>">
+				<span class="title"><%= blog.title %></span>
+			</li>
+			<% end %>
+		</ul>
+		<a class="signout" href="/signout">
+			<i class="icon-signout"></i> sign out
+		</a>
+	</nav>
+</header>
+<div id="images"></div>
+<div id="content" draggable="true">
+	<span class="description">
+		Drop<br/>
+		<span>images</span><br/>
+		<i class="icon-camera"></i>
+		<i class="icon-camera-retro"></i>
+		<i class="icon-picture"></i>
+		<br/>
+		here!
+	</span>
+</div>
+<!--
+<img src="<%= url("/icon/#{primary_base_hostname}") %>">
+<a href="<%= url('/signout') %>">Sign out</a>
+<div class="photo_area" draggable="true">drop photos here!</div>
+-->

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+  	<meta encoding="utf-8"/>
+  	<title>Tumblr image uploader</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <script src="<%= url('/jquery.masonry.min.js') %>"></script>
+    <script src="<%= url('/underscore-min.js') %>"></script>
+    <script src="<%= url('/backbone-min.js') %>"></script>
+    <script src="<%= url('/main.js') %>"></script>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.7.2/build/cssreset/cssreset-min.css"/>
+    <link href="<%= url('/style.css') %>" media="screen" rel="stylesheet" type="text/css"/>
+    <link href="<%= url('/font-awesome.css') %>" media="screen" rel="stylesheet" type="text/css"/>
+  </head>
+  <body draggable="true">
+    <%= yield %>
+  </body>
+</html>
